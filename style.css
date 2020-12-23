@@ -1,0 +1,546 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Meiryo','メイリオ';
+    font-size: 62.5%;
+    color:#333;
+}
+
+section{
+    margin:20px 0;
+    padding: 30px 0;
+}
+
+ul {
+    list-style:none;
+}
+
+.mt20{
+    margin-top:20px;
+}
+
+.con980{
+    width:980px;
+    margin:0 auto;
+    text-align: center;
+    padding:20px;
+}
+
+.bg-w{
+    background:rgba(255,255,255,0.8);
+}
+
+.cw{
+    display: block;
+    color:#fff8f8;
+    font-size:2rem;
+    text-align: center;
+    letter-spacing: 10px;
+    text-shadow: #333 0px 2px 2px;
+    margin-bottom:20px;
+}
+
+.right{
+    text-align: right;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.header-bk{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    height:60px;
+    align-items: baseline;
+    background:#fff8f8;
+}
+
+.header-bk .logo,
+.header-bk .logo a,
+#footer .logo{
+    font-family: 'arial black';
+    color:#84945D;
+    font-size: 4rem;
+    padding:0 30px;
+    text-decoration: none;
+}
+
+.header-bk nav{
+    margin-left: auto;
+}
+
+.header-bk ul {
+    display: flex;
+    margin-right: 20px;
+}
+
+.header-bk nav ul li {
+    margin-left: 20px;
+    font-size: 2rem;
+    border-bottom: solid 3px #fff8f8;
+    transition: all 0.3s;
+}
+
+.header-bk li a{
+    text-decoration: none;
+    color:#333;
+    width: 100%;
+    margin:5px;
+}
+
+.header-bk li:hover{
+    border-bottom: solid 3px #84945D;
+}
+
+#main{
+    margin-top:70px;
+    background:#333;
+}
+
+#main > .bg {
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100%;
+    padding: 6%;
+}
+
+#concept h2,
+#menu h2,
+#catlog h2,
+#gallery h2,
+#access h2,
+#news h2,
+#recruit h2 {
+    font-family: 'Impact';
+    text-align: center;
+    font-size: 5.5rem;
+    color:#fff8f8;
+    letter-spacing: 10px;
+    text-shadow: #333 0px 2px 2px;
+}
+
+#menu, #gallery, #access{
+    background:#333;
+    padding:30px 0;
+}
+
+.cd-fixed-bg {
+    position: relative;
+    min-height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 2;
+}
+
+/*--固定背景01--*/
+.cd-fixed-bg.cd-bg-1  {
+  background-image: url('image/main1.jpg');
+  padding: 30px 0;
+}
+
+/*--固定背景02--*/
+.cd-fixed-bg.cd-bg-2  {
+  background-image: url('image/main2.jpg');
+  padding: 30px 0;
+}
+
+/*--固定背景03--*/
+.cd-fixed-bg.cd-bg-3  {
+  background-image: url('image/main3.jpg');
+  padding: 30px 0;
+}
+
+.box-warrper{
+    text-align: center;
+    width:100%;
+}
+
+.box-2{
+    display:inline-block;
+    width:48%;
+    margin:10px 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.box-3{
+    display: inline-block;
+    width:30%;
+}
+
+.box-3 img {
+    width: 100%;
+}
+
+#concept h3{
+    position: relative;
+    font-size: 3rem;
+    line-height: 1.4;
+    padding:0.25em 1em;
+    display: inline-block;
+}
+
+#concept h3::before, #concept h3::after { 
+    content:'';
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    display: inline-block;
+}
+
+#concept h3::before {
+    border-left: solid 1px #84945D;
+    border-top: solid 1px #84945D;
+    top:0;
+    left: 0;
+}  
+
+#concept h3::after {
+    border-right: solid 1px #84945D;
+    border-bottom: solid 1px #84945D;
+    bottom:0;
+    right: 0;
+}
+
+#concept p{
+    margin-top:30px;
+    font-size:1.5rem;
+    line-height: 3rem;
+}
+
+#menu h3{
+    font-family: 'arial black';
+    font-size:3rem;
+    color:#fff8f8;
+    letter-spacing: 5px;
+}
+
+#menu table{
+    width: 50%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#menu tr{
+    border-bottom:solid 1px #fff8f8;
+}
+
+#menu td{
+    font-size: 1.4rem;
+    color:#fff8f8;
+    line-height: 3.6rem;
+    letter-spacing: 3px;
+}
+
+.waku{
+    width:30%;
+    height: auto;
+    -webkit-filter: grayscale(1);
+    filter: gray;
+    filter: grayscale(1);
+    transition: all 0.3s;
+}
+
+.waku:hover{
+    -webkit-filter: grayscale(0);
+    filter: none;
+    filter: grayscale(0);
+}
+
+#catlog .btn a{
+    display: block;
+    font-family: 'arial black';
+    letter-spacing: 3px;
+    width:200px;
+    border:solid 2px #333;
+    font-weight: bold;
+    font-size:2.2rem;
+    margin: 15px auto;
+    text-align: center;
+    background:#fff8f8;
+    color:#333;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#catlog .btn a:hover{
+    background:#84945D;
+    color:#fff8f8;
+}
+
+#gallery p{
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    color:#fff8f8;
+}
+
+#access table{
+    width:90%;
+    font-size:1.8rem;
+    line-height: 4rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    letter-spacing: 3px;
+    color:#fff8f8;
+    margin:0 auto;
+}
+
+#access tr{
+    text-align: left;
+    border-bottom:solid 1px #fff8f8;
+}
+
+#access td{
+    vertical-align: middle;
+}
+
+#recruit img{
+    width:80%;
+}
+
+#recruit .box-2 p{
+    font-size:1.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 3rem;
+    color:#fff8f8;
+}
+
+#recruit .btn a{
+    display: block;
+    font-family: 'arial black';
+    letter-spacing: 3px;
+    width:200px;
+    border:solid 2px #84945D;
+    font-weight: bold;
+    font-size:2.2rem;
+    margin: 15px auto;
+    text-align: center;
+    background:#fff8f8;
+    color:#84945D;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#recruit .btn a:hover{
+    background:#84945D;
+    color:#fff8f8;
+}
+
+#news ul{
+    font-size:1.8rem;
+    color:#333;
+    padding:5px;
+    text-align: left;
+}
+
+#news li{
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+#news .day{
+    width:130px;
+    text-align: center;
+    background:#333;
+    color:#fff8f8;
+    font-weight: 700;
+    padding:5px 0 ;
+}
+
+#news .category{
+    width:40px;
+    text-align: center;
+    font-size: 1.5rem;
+    color:#444;
+}
+
+#news .title a{
+    color:#333;
+}
+
+#footer {
+    background:#fff8f8;
+    width:100%;
+    padding-bottom:20px;
+}
+
+#footer .box-warrper{
+    display:flex;
+    flex-direction:row;
+}
+
+#footer .box40{
+    display: inline-block;
+    width:38%;
+    vertical-align: middle;
+    order: 1;
+}
+
+#footer .box60{
+    display: inline-block;
+    width:60%;
+    vertical-align: middle;
+    order: 2;
+}
+
+#footer .box-2{
+    vertical-align: top;
+}
+
+#footer h2{
+    font-size:2rem;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#footer ul{
+    text-align: left;
+}
+
+#footer table{
+    width: 100%;
+    text-align: left;
+}
+
+#footer tr{
+    font-size:1.4rem;
+    line-height: 2rem;
+}
+
+#footer a{
+    text-decoration: none;
+    color:#333;
+    font-size:1.4rem;
+    letter-spacing: 1px;
+}
+
+#footer a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-widrh:980px) {
+    .con980{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    section{
+        margin:20px 0;
+        padding: 30px 0;
+    }
+
+    .con980{
+        width:100%;
+    }
+
+    .header-bk{
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100%;
+        z-index: 100;
+        display: flex;
+        height:60px;
+        align-items: baseline;
+        background:#fff8f8;
+    }
+    
+    .header-bk .logo{
+        font-family: 'arial black';
+        color:#84945D;
+        font-size: 4rem;
+        padding:0 30px;
+    }
+    
+    .header-bk nav ul{
+        display: none;
+    }
+
+    #main{
+        margin-top:60px;
+    }
+
+	.cd-fixed-bg {
+		background-size: cover;
+		background-attachment: scroll;
+    }
+    
+    .box-2{
+        display:block;
+        width:100%;
+        margin:10px auto;
+    }
+    
+    .box-3{
+        display: block;
+        width:100%;
+    }
+    
+    #concept h3{
+        font-size: 2.5rem;
+        padding:0.25em 0.8em;
+    }
+    
+    #menu table{
+        width: 90%;
+    }
+    
+    #gallery p{
+        margin-bottom:20px;
+    }
+    
+    #news ul{
+        font-size:1.5rem;
+    }
+    
+    #news .day{
+        width:120px;
+    }
+    
+    #news .category{
+        width:20px;
+        font-size: 1.3rem;
+    }
+
+    #footer .box-warrper{
+        flex-direction:column;
+    }
+
+    #footer .box40{
+        display:block;
+        width:100%;
+        order: 2;
+    }
+    
+    #footer .box60{
+        display: block;
+        width:100%;
+        order: 1;
+    }
+
+    #footer .box-2{
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+}
