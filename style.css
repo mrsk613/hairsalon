@@ -8,6 +8,7 @@ html{
     font-family: 'Meiryo','メイリオ';
     font-size: 62.5%;
     color:#333;
+    background:#fff8f8;
 }
 
 section{
@@ -104,6 +105,11 @@ ul {
 #main{
     margin-top:70px;
     background:#333;
+}
+
+#main_w{
+    margin-top:70px;
+    background:#fff8f8;
 }
 
 #main > .bg {
