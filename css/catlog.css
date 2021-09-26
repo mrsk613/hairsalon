@@ -1,0 +1,103 @@
+.logo a {
+	color: #84945D;
+	transition: all .2s ;
+}
+
+.logo a:hover {
+	opacity: .8;
+}
+
+main {
+	padding-top: 68px;
+	background: #F2F0E9;
+	padding-bottom: 50px;
+}
+
+.con980 {
+	width: 980px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 980px) {
+	.con980{
+		width: 100%;
+	}
+} 
+
+/*==================================================
+ギャラリーのためのcss
+===================================*/
+
+.sort-btn {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 50px 20px;
+}
+
+.sort-btn li {
+	background: #fff;
+	color:#333;
+	list-style: none;
+	font-family: 'IM Fell DW Pica SC';
+	font-size: 1.6em;
+	letter-spacing: .1em;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px;
+	margin: 0 10px;
+}
+
+.sort-btn li.active {
+	background: #84945D;
+	color:#fff;
+}
+
+@media only screen and (max-width: 768px) {
+	.sort-btn {
+		justify-content: space-between;
+	}
+	.sort-btn li {
+		width: 48%;
+		margin: 0 0 10px 0;
+		text-align: center;
+	}
+}
+
+.grid {
+	position: relative;
+}
+
+.item {
+	display: block;
+	position: absolute;
+	width: 33%;
+	z-index: 1;
+	list-style: none;
+}
+
+.item-content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.grid img {
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+@media only screen and (max-width: 768px) {
+	.item {
+		width: 49.5%;
+	}
+}
+
+.fancybox-thumbs {
+	background: transparent!important;
+}
+
+.fancybox-thumbs__list a:before {
+	border: 6px solid #84945D;
+}
