@@ -3,28 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <title>hair salon</title>
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <h1 class="logo">Hair Salon</h1>
-            <nav>
-                <div class="nav_pc">
-                    <ul>
-                        <li><a href="#concept">CONCEPT</a></li>
-                        <li><a href="#menu">MENU</a></li>
-                        <li><a href="catlog.html">CATLOG</a></li>
-                        <li><a href="#gallery">GALLERY</a></li>
-                        <li><a href="#access">ACCESS</a></li>
-                        <li><a href="#news">NEWS</a></li>
-                        <li><a href="#recruit">RECRUIT</a></li>
-                    </ul>
-                </div>
+    <header id="header">
+        <div class="header-box"></div>
+        <div class="header-box">
+            <h1 class="logo">HAIR SALON</h1>
+        </div>
+        <div class="header-box">
+            <nav class="pc-nav">
+                <ul>
+                    <li><a href="#concept">CONCEPT</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#catlog">CATLOG</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#recruit">RECRUIT</a></li>
+                </ul>
             </nav>
             <div class="openbtn"><span></span><span></span><span></span></div>
             <nav id="g-nav">
@@ -32,9 +35,7 @@
                     <ul>
                         <li><a href="#concept">CONCEPT</a></li>
                         <li><a href="#menu">MENU</a></li>
-                        <li><a href="catlog.html">CATLOG</a></li>
-                        <li><a href="#gallery">GALLERY</a></li>
-                        <li><a href="#access">ACCESS</a></li>
+                        <li><a href="#catlog">CATLOG</a></li>
                         <li><a href="#news">NEWS</a></li>
                         <li><a href="#recruit">RECRUIT</a></li>
                     </ul>
@@ -44,234 +45,338 @@
         </div>
     </header>
     <main>
-        <section id="consept" class="pt-30">
-            <div class="parallax parallax-bg img-bg-01">
-                <h2>CONCEPT<span>コンセプト</span></h2>
-                <div class="con980 bg-w">
-                    <p class="kakko">新しい自分に出会う</p>
-                    <p class="mt-30">時間を惜しまず、お客様に満足いただけるまで、<br>
-                        しっかりとコミュニケーションをしながら、<br>
-                        新しい自分に出会うお手伝いをさせていただきます。</p>
-                    <p class="mt-10">一日の始まりが気持ちの良い時間になりますように。</p>
+        <section id="main">
+            <div class="viewer">
+                <ul>
+                    <li><a href="#1"><img src="img/main1.jpg" alt=""></a></li>
+                    <li><a href="#2"><img src="img/main2.jpg" alt=""></a></li>
+                    <li><a href="#3"><img src="img/main3.jpg" alt=""></a></li>
+                    <li><a href="#4"><img src="img/main4.jpg" alt=""></a></li>
+                    <li><a href="#5"><img src="img/main5.jpg" alt=""></a></li>
+                </ul>
+                <div class="scrolldown1"><span>Scroll</span></div>
+            </div>
+        </section>
+        <section id="concept">
+            <div class="flex-wrap">
+                <div class="concept-img">
+                    <img src="img/main3.jpg">
+                </div>
+                <div class="concept-text">
+                    <p class="ta-center"><span class="number">01</span></p>
+                    <h2>Concept</h2>
+                    <p class="mt-30 kakko">新しい自分に出会う</p>
+                    <p class="mt-30">時間を惜しまず、お客様に満足いただけるまで、<br>しっかりとコミュニケーションをしながら、<br>新しい自分に出会うお手伝いをさせていただきます。</p>
+                    <br>
+                    <p>一日の始まりが気持ちの良い時間になりますように。</p>
                 </div>
             </div>
         </section>
         <section id="menu">
-            <div class="parallax scrollbox">
-                <h2 class="h2-2">MENU<span>メニュー</span></h2>
-                <div class="con980">
-                    <div class="flex-wrap">
-                        <div class="box-2">
-                            <h3 class="h3-2">CUT</h3>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>男性</td>
-                                        <td class="ta-right">￥3,900（税別）</td>
-                                    </tr>
-                                    <tr>
-                                        <td>女性</td>
-                                        <td class="ta-right">￥3,500（税別）</td>
-                                    </tr>
-                                    <tr>
-                                        <td>学生</td>
-                                        <td class="ta-right">￥3,000（税別）</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+            <p class="ta-center"><span class="number">02</span></p>
+            <h2>Menu</h2>
+            <div class="main-wrap">
+                <div class="menu-left">
+                    <h3 class="main-border-01">Cut Menu</h3>
+                    <table>
+                        <tr>
+                            <th>カット</th>
+                            <td>￥3,500</td>
+                        </tr>
+                        <tr>
+                            <th>フロントカット</th>
+                            <td>￥1,000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="menu-right">
+                    <h3 class="main-border-02">Treatment Menu</h3>
+                    <table>
+                        <tr>
+                            <th>オッジオット（クイック）</th>
+                            <td>¥3,500</td>
+                        </tr>
+                        <tr>
+                            <th>オッジオット（ベーシック）</th>
+                            <td>¥4,500</td>
+                        </tr>
+                        <tr>
+                            <th>オッジオット（アドバンス）</th>
+                            <td>¥6,000</td>
+                        </tr>
+                        <tr>
+                            <th>オッジオット（プレミアム）</th>
+                            <td>¥7,000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="menu-left">
+                    <h3 class="main-border-02">Color Menu</h3>
+                    <table>
+                        <tr>
+                            <th>カラー</th>
+                            <td>¥6,000</td>
+                        </tr>
+                        <tr>
+                            <th>イルミナカラー</th>
+                            <td>¥8,000</td>
+                        </tr>
+                        <tr>
+                            <th>グロスカラー</th>
+                            <td>¥2,000</td>
+                        </tr>
+                        <tr>
+                            <th>シャイニーグロス</th>
+                            <td>¥3,500</td>
+                        </tr>
+                        <tr>
+                            <th>リタッチカラー</th>
+                            <td>¥4,500</td>
+                        </tr>
+                        <tr>
+                            <th>ハイライト</th>
+                            <td>¥3,000～</td>
+                        </tr>
+                        <tr>
+                            <th>ブリーチ</th>
+                            <td>¥6,000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="menu-right">
+                    <h3 class="main-border-01">Parm Menu</h3>
+                    <table>
+                        <tr>
+                            <th>パーマ</th>
+                            <td>¥6,000</td>
+                        </tr>
+                        <tr>
+                            <th>クリープパーマ</th>
+                            <td>¥8,000</td>
+                        </tr>
+                        <tr>
+                            <th>特殊パーマ</th>
+                            <td>¥10,000～</td>
+                        </tr>
+                        <tr>
+                            <th>縮毛　S</th>
+                            <td>¥20,000</td>
+                        </tr>
+                        <tr>
+                            <th>縮毛　M</th>
+                            <td>¥25,000</td>
+                        </tr>
+                        <tr>
+                            <th>縮毛　L</th>
+                            <td>¥30,000</td>
+                        </tr>
+                        <tr>
+                            <th>部分縮毛</th>
+                            <td>¥12,000～</td>
+                        </tr>
+                        <tr>
+                            <th>ストレートパーマ</th>
+                            <td>¥12,000</td>
+                        </tr>
+                        <tr>
+                            <th>デジタルパーマ</th>
+                            <td>¥14,000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="menu-left">
+                    <h3 class="main-border-01">Other Menu</h3>
+                    <table>
+                        <tr>
+                            <th>シャンプー・ブロー</th>
+                            <td>¥2,000</td>
+                        </tr>
+                        <tr>
+                            <th>アイブロー</th>
+                            <td>¥1,500</td>
+                        </tr>
+                        <tr>
+                            <th>セット</th>
+                            <td>¥4,000</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="menu-right">
+                    <h3 class="main-border-02">Spa Menu</h3>
+                    <table>
+                        <tr>
+                            <th>アロマスパ</th>
+                            <td>¥3,000</td>
+                        </tr>
+                        <tr>
+                            <th>エイジングアロマスパ</th>
+                            <td>¥6,000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="catlog">
+            <p><span class="number">03</span></p>
+            <div class="con980">
+                <h2>Catlog</h2>
+                <div class="catlog-wrap">
+                    <div class="catlog_item">
+                        <img src="img/lon02.jpg">
+                        <div class="catlog_item-info">
+                            <div class="catlog_item-label">long</div>
+                            <p class="catlog_item-stylist">stylist：Ayana Sato</p>
+                            <p class="catlog_item-title">ロングヘアー</p>
                         </div>
-                        <div class="box-2">
-                            <h3 class="h3-2">COLOR</h3>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td class="ta-left">イルミナカラー</td>
-                                        <td class="ta-right">￥5,000（税別）</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ta-left">ヴィラロドラカラー</td>
-                                        <td class="ta-right">￥4,800（税別）</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ta-left">リタッチカラー</td>
-                                        <td class="ta-right">￥1,500（税別）</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                    </div>
+                    <div class="catlog_item">
+                        <img src="img/med01.jpg">
+                        <div class="catlog_item-info">
+                            <div class="catlog_item-label">medium</div>
+                            <p class="catlog_item-stylist">stylist：Ayana Sato</p>
+                            <p class="catlog_item-title">ミディアムヘア</p>
+                        </div>
+                    </div>
+                    <div class="catlog_item">
+                        <img src="img/sho02.jpg">
+                        <div class="catlog_item-info">
+                            <div class="catlog_item-label">short</div>
+                            <p class="catlog_item-stylist">stylist：Ayana Sato</p>
+                            <p class="catlog_item-title">ショートボブ</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="catalog">
-            <div class="parallax parallax-bg img-bg-02">
-                <h2>CATLOG<span>カタログ</span></h2>
-                <div class="flex-wrap">
-                    <div class="box-3">
-                        <div class="grayscale"><img src="image/sho02.jpg" width="100%"></div>
-                    </div>
-                    <div class="box-3">
-                        <div class="grayscale"><img src="image/med01.jpg" width="100%"></div>
-                    </div>
-                    <div class="box-3">
-                        <div class="grayscale"><img src="image/lon01.jpg" width="100%"></div>
-                    </div>
-                </div>
-                <div class="mt-20 ta-center"><a href="catlog.html" class="button bordercircle3"><span>MORE</span></a>
+                <div class="bottun-positon">
+                    <a href="catlog.html" class="button">All Style</a>
                 </div>
             </div>
         </section>
-        <section id="gallery">
-            <div class="parallax scrollbox">
-                <h2 class="h2-2">GALLERY<span>ギャラリー</span></h2>
-                <div class="flex-wrap">
-                    <div class="box-3">
-                        <div class="grayscale"><img src="image/gallery1.jpg" width="100%"></div>
-                        <p>店内１</p>
-                    </div>
-                    <div class="box-3">
-                        <div class="grayscale"><img src="image/gallery2.jpg" width="100%"></div>
-                        <p>店内２</p>
-                    </div>
-                    <div class="box-3">
-                        <div class="grayscale"><img src="image/gallery3.jpg" width="100%"></div>
-                        <p>待合席</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="access">
-            <div class="parallax scrollbox2">
-                <div class="flex-wrap">
-                    <div class="access_box">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th width="25%" class="fw-bold">Address</th>
-                                    <td>〒171-0021<br>東京都豊島区南池袋1-26-5　東ビル101<br>
-                                        池袋駅西口より徒歩5分</td>
-                                </tr>
-                                <tr>
-                                    <th class="fw-bold">Tel</th>
-                                    <td>03-1234-5678</td>
-                                </tr>
-                                <tr>
-                                    <th class="fw-bold">Open</th>
-                                    <td>10:00～19:00　月曜定休</td>
-                                </tr>
-                                <tr>
-                                    <th class="fw-bold">Contact</th>
-                                    <td>hairsalon@mail.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="access_box">
-                        <iframe
-                            src="https://www.google.com/maps?output=embed&amp;z=15&amp;ll=35.7332051,139.7036834&amp;q=池袋駅"
-                            width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""
-                            aria-hidden="false" tabindex="0"></iframe>
-                    </div>
-                </div>
-            </div>
+        <section class="image">
+            <img src="img/main6.jpg">
         </section>
         <section id="news">
-            <div class="parallax parallax-bg img-bg-03">
-                <h2>NEWS<span>ニュース</span></h2>
-                <div class="con980 bg-w">
-                    <ul>
-                        <li>
-                            <p class="day">2020.12.20</p>
-                            <p class="category_news">news</p><a href="#">冬期休業のお知らせ</a>
-                        </li>
-                        <li>
-                            <p class="day">2020.11.15</p>
-                            <p class="category_blog">blog</p><a href="#">定期休業・臨時休業日</a>
-                        </li>
-                        <li>
-                            <p class="day">2020.10.31</p>
-                            <p class="category_blog">blog</p><a href="#">ラジオ出演！！</a>
-                        </li>
-                        <li>
-                            <p class="day">2020.10.22</p>
-                            <p class="category_blog">blog</p><a href="#">イベント開催しました！</a>
-                        </li>
-                        <li>
-                            <p class="day">2020.10.1</p>
-                            <p class="category_blog">blog</p><a href="#">イベント開催のご案内</a>
-                        </li>
-                        <li>
-                            <p class="day">2020.8.31</p>
-                            <p class="category_news">news</p><a href="#">営業再開のお知らせ</a>
-                        </li>
-                        <li>
-                            <p class="day">2020.4.30</p>
-                            <p class="category_news">news</p><a href="#">当面の営業に関して</a>
-                        </li>
-                    </ul>
+            <p class="ta-center"><span class="number">04</span></p>
+            <h2>News</h2>
+            <div class="flex-wrap con980">
+                <div class="box-3">
+                    <a href="#">
+                        <div class="news_item-label">news</div>
+                        <p class="news_item-day">2020.12.20</p>
+                        <p class="news_item-title">冬期休業のお知らせ</p>
+                    </a>
+                </div>
+                <div class="box-3">
+                    <a href="#">
+                        <div class="news_item-label">blog</div>
+                        <p class="news_item-day">2020.11.15</p>
+                        <p class="news_item-title">定期休業・臨時休業日</p>
+                    </a>
+                </div>
+                <div class="box-3">
+                    <a href="#">
+                        <div class="news_item-label">blog</div>
+                        <p class="news_item-day">2020.10.31</p>
+                        <p class="news_item-title">ラジオ出演！！</p>
+                    </a>
+                </div>
+                <div class="box-3">
+                    <a href="#">
+                        <div class="news_item-label">blog</div>
+                        <p class="news_item-day">2020.10.22</p>
+                        <p class="news_item-title">イベント開催しました！</p>
+                    </a>
+                </div>
+                <div class="box-3">
+                    <a href="#">
+                        <div class="news_item-label">blog</div>
+                        <p class="news_item-day">2020.10.1</p>
+                        <p class="news_item-title">イベント開催のご案内</p>
+                    </a>
+                </div>
+                <div class="box-3">
+                    <a href="#">
+                        <div class="news_item-label">news</div>
+                        <p class="news_item-day">2020.8.31</p>
+                        <p class="news_item-title">営業再開のお知らせ</p>
+                    </a>
+                </div>
+                <div class="box-3">
+                    <a href="#">
+                        <div class="news_item-label">news</div>
+                        <p class="news_item-day">2020.4.30</p>
+                        <p class="news_item-title">当面の営業に関して</p>
+                    </a>
                 </div>
             </div>
         </section>
         <section id="recruit">
-            <div class="parallax scrollbox">
-                <h2 class="h2-2">RECRUIT<span>採用情報</span></h2>
-                <div class="con980 flex-wrap">
-                    <div class="box-2">
-                        <img src="image/Recruit.jpg" width="100%">
-                    </div>
-                    <div class="box-2">
-                        <p>Hair Salonの仲間として働いてくれる方を募集中！<br>お客様の「なりたい姿」をともに叶えていきましょう。</p>
-                    </div>
+            <div class="flex-wrap">
+                <div class="recruit-text">
+                    <h2>Recruit</h2>
+                    <p class="mt-30">Hair Salonの仲間として働いてくれる方を募集中<br>お客様の「なりたい姿」をともに叶えていきましょう。</p>
+                    <a href="#" class="button">MORE</a>
                 </div>
-                <div class="mt-20 ta-center"><a href="#" class="button bordercircle3"><span>MORE</span></a></div>
+                <div class="recruit-img">
+                    <img src="img/recruit.jpg">
+                </div>
             </div>
         </section>
-        <p id="page-top"><a href="#"></a></p>
-    </main>
-    <footer>
-        <div class="con980 footer-wrap">
-            <div class="footer-logo">
-                <p class="logo">Hair Salon</p>
-                <p class="copy">Copyright &copy; Hair Salon.Allright Reserved</p>
-            </div>
-            <div class="footer-list">
-                <div class="flex-wrap">
-                    <div class="box-2">
-                        <h4>Chack!</h4>
-                        <ul>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Hotpepper Beauty</a></li>
-                        </ul>
-                    </div>
-                    <div class="box-2">
-                        <h4>SHOP INFORMATION</h4>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td class="fw-bold"><i class="fas fa-map-marker-alt fa-fw"></i></td>
-                                    <td>東京都豊島区南池袋1-26-5<br>東ビル101</td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-bold"><i class="fas fa-phone fa-fw"></i></td>
-                                    <td>03-1234-5678</td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-bold"><i class="fas fa-store-alt fa-fw"></i></td>
-                                    <td>10:00～19:00　月曜定休</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <section id="access">
+            <div class="access_wrap">
+                <div class="map_box">
+                    <iframe
+                        src="https://www.google.com/maps?output=embed&amp;z=15&amp;ll=35.7332051,139.7036834&amp;q=池袋駅"
+                        width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="access_box">
+                    <h2>Access</h2>
+                    <p class="mt-40">〒171-0021<br>東京都豊島区南池袋1-26-5<br>東ビル101<br>
+                        <span>池袋駅西口より徒歩5分</span>
+                    </p>
+                    <dl class="border-top">
+                        <dd>OPEN:</dd>
+                        <dt>10:00～19:00<br>（最終受付 18:00）</dt>
+                    </dl>
+                    <dl>
+                        <dd>CLOSE:</dd>
+                        <dt>毎週月曜</dt>
+                    </dl>
+                    <dl class="border-top">
+                        <dd>TEL:</dd>
+                        <dt>03-1234-5678</dt>
+                    </dl>
                 </div>
             </div>
-        </div>
+        </section>
+        <section id="review">
+            <div class="review_wrap">
+                <div class="review_img">
+                    <img src="img/smartphone.png" alt="smartphone">
+                </div>
+                <div class="review_box">
+                    <h2>Review</h2>
+                    <p class="ta-center mt-10">お客様からのレビューをご紹介します。<br>親切なカウンセリングと高い技術力で、<br>一人ひとりが目指すスタイルを実現いたします。</p>
+                    <a href="review.html" class="button">MORE</a>
+                </div>
+            </div>
+        </section>
+        <div id="page_top"><a href="#"></a></div>
+    </main>
+    <footer>
+        <p class="logo">HAIR SALON</p>
+        <p class="address">〒171-0021　東京都豊島区南池袋1-26-5　東ビル101</p>
+        <p class="tel">TEL 03-1234-5678 / OPEN 10:00～19:00</p>
+        <a href="#"><i class="fab fa-facebook"></i>FACEBOOK</a>
+        <a href="#"><i class="fab fa-instagram"></i>INSTAGRAM</a>
+        <a href="#"><i class="fab fa-twitter"></i>TWITTER</a>
+        <p class="copyright">Copyright &copy; Hair Salon.Allright Reserved</p>
     </footer>
+    <script src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 </body>
 
 </html>
