@@ -1,0 +1,1428 @@
+/*====================================
+  共通
+======================================*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+p {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+.ta-left {
+    text-align: left;
+}
+
+.ta-right {
+    text-align: right;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.pt-30 {
+    padding-top: 30px;
+}
+
+.pt-40 {
+    padding-top: 40px;
+}
+
+.pt-50 {
+    padding-top: 50px;
+}
+
+.pt-60 {
+    padding-top: 60px;
+}
+
+.flex-wrap {
+    display: flex;
+    margin: 0 auro;
+    flex-wrap: wrap;
+}
+
+.box-3 {
+    display: inline-block;
+    width: calc(33% - 20px);
+    margin: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .box-3 {
+        display: block;
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
+/*====================================
+  ヘッダー
+======================================*/
+
+#header {
+    align-items: center;
+    position: fixed;
+    display: flex;
+    z-index: 3;
+    padding: 5px 0;
+    flex-wrap: wrap;
+    width: 100%;
+    background: #FDF9EE;
+}
+
+.header-box {
+    width: calc(33% - 10px);
+    margin: 10px 5px;
+    vertical-align: middle;
+}
+
+.logo {
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #84945D;
+}
+
+.pc-nav {
+    display: block;
+    transition: all 0.3s;
+}
+
+#g-nav {
+    display: none;
+}
+
+.pc-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.pc-nav ul li a {
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-size: 1.5rem;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #363636;
+    padding: 10px;
+    transition: all .5s;
+}
+
+.pc-nav ul li a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: #363636;
+    transition: all .3s;
+    transform: scale(0, 1);
+    transform-origin: center top;
+}
+
+.pc-nav ul li a:hover {
+    color: #84945D;
+}
+
+.pc-nav ul li a:hover::after {
+    transform: scale(1, 1);
+}
+
+@media screen and (max-width:768px) {
+    .pc-nav {
+        display: none;
+    }
+    .logo {
+        font-size: 2em;
+        letter-spacing: .1em;
+    }
+    #g-nav {
+        display: block;
+    }
+    #g-nav.panelactive {
+        display: block;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+    }
+    .circle-bg {
+        position: fixed;
+        z-index: 3;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #F2F0E9;
+        transform: scale(0);
+        right: -50px;
+        top: -50px;
+        transition: all .6s;
+    }
+    .circle-bg.circleactive {
+        transform: scale(50);
+    }
+    #g-nav-list {
+        display: none;
+        left: 0;
+        top: 0;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100vh;
+        -webkit-overflow-scrolling: touch;
+    }
+    #g-nav.panelactive #g-nav-list {
+        display: block;
+    }
+    #g-nav ul {
+        opacity: 0;
+        counter-reset: count 0;
+        position: absolute;
+        z-index: 999;
+        top: 20%;
+        left: 40%;
+        width: 60%;
+        transform: translate(-40%);
+    }
+    #g-nav.panelactive ul {
+        opacity: 1;
+    }
+    #g-nav.panelactive ul li {
+        animation-name: gnaviAnime;
+        animation-duration: 1s;
+        animation-delay: .2s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+    }
+    @keyframes gnaviAnime {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    #g-nav li {
+        text-align: left;
+        list-style: none;
+    }
+    #g-nav li ::before {
+        content: "0" counter(count) " ";
+        counter-increment: count 1;
+        border-top: 1px solid #333;
+        color: #333;
+        margin: 0 10px;
+    }
+    #g-nav li a {
+        font-family: 'IM Fell DW Pica SC', serif;
+        color: #84945D;
+        font-size: 2em;
+        text-decoration: none;
+        padding: 20px;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        transition: all .3s;
+    }
+    #g-nav li a:hover {
+        color: #363636;
+    }
+    .openbtn {
+        display: block;
+        position: fixed;
+        top: 5px;
+        right: 10px;
+        z-index: 9999;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+    }
+    .openbtn span {
+        display: inline-block;
+        transition: all .4s;
+        position: absolute;
+        left: 14px;
+        height: 1px;
+        background-color: #333;
+        width: 45%;
+    }
+    .openbtn span:nth-of-type(1) {
+        top: 15px;
+    }
+    .openbtn span:nth-of-type(2) {
+        top: 23px;
+    }
+    .openbtn span:nth-of-type(3) {
+        top: 31px;
+    }
+    .openbtn.active span:nth-of-type(1) {
+        top: 18px;
+        left: 18px;
+        transform: translateY(6px) rotate(-45deg);
+        width: 30%;
+    }
+    .openbtn.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .openbtn.active span:nth-of-type(3) {
+        top: 30px;
+        left: 18px;
+        transform: translateY(-6px) rotate(45deg);
+        width: 30%;
+    }
+}
+
+/*====================================
+  スライダー
+======================================*/
+
+.viewer {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.viewer ul {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.viewer ul li {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.viewer ul li img {
+    width: 100%;
+}
+
+/*====================================
+  スクロールダウン
+======================================*/
+
+.scrolldown1 {
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    height: 50px;
+    z-index: 2;
+}
+
+.scrolldown1 span {
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    color: #eee;
+    letter-spacing: 0.05em;
+}
+
+.scrolldown1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 30px;
+    background: #eee;
+    animation: pathmove 2s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes pathmove {
+    0% {
+        height: 0;
+        top: 0;
+        opacity: 0;
+    }
+    30% {
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        top: 50px;
+        opacity: 0;
+    }
+}
+
+/*====================================
+  上に戻るボタン
+======================================*/
+
+#page_top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    background: rgba(51, 51, 51, 0.8);
+}
+
+#page_top a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+}
+
+#page_top a::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f102';
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -5px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+
+/*====================================
+  メイン
+======================================*/
+
+#main {
+    background: #FDF9EE;
+    padding-top: 130px;
+    padding-bottom: 60px;
+}
+
+@media screen and (max-width:768px) {
+    #main {
+        padding-top: 200px;
+        padding-bottom: 250px;
+    }
+}
+
+/*====================================
+  コンセプト
+======================================*/
+
+#concept {
+    padding-top: 160px;
+    padding-bottom: 130px;
+    background: #F2F0E9;
+}
+
+.concept-img {
+    flex-basis: calc(50% + 80px);
+    width: calc(50% + 80px);
+}
+
+.concept-img img {
+    width: 100%;
+}
+
+.concept-text {
+    flex-basis: calc(50% - 80px);
+    width: calc(50% - 80px);
+    position: relative;
+    height: auto;
+    text-align: center;
+    padding: 90px 40px 0 80px;
+}
+
+#concept .number {
+    display: block;
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 2.2rem;
+    letter-spacing: .3rem;
+    position: absolute;
+    left: 80px;
+    top: 80px;
+    border-top: 1px solid #363636;
+    font-weight: bold;
+}
+
+#concept h2 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.kakko {
+    position: relative;
+    font-size: 2rem;
+    line-height: 1.4;
+    padding: 0.25em 1em;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.kakko::before {
+    border-left: solid 1px #84945D;
+    border-top: solid 1px #84945D;
+    top: 0;
+    left: 0;
+}
+
+.kakko::after {
+    border-right: solid 1px #84945D;
+    border-bottom: solid 1px #84945D;
+    bottom: 0;
+    right: 0;
+}
+
+.kakko::before, .kakko::after {
+    content: '';
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    display: inline-block;
+}
+
+@media screen and (max-width:768px) {
+    #concept {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .concept-img {
+        flex-basis: 100%;
+        width: 100%;
+    }
+    .concept-text {
+        flex-basis: 100%;
+        width: 100%;
+        padding: 40px 40px 0 40px;
+    }
+    #concept .number {
+        top: 40px;
+    }
+}
+
+/*====================================
+  メニュー
+======================================*/
+
+#menu {
+    background: #ededed;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+#menu .number {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 2.2rem;
+    letter-spacing: .3rem;
+    text-align: center;
+    border-top: 1px solid #363636;
+    font-weight: bold;
+}
+
+#menu h2 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 40px auto 0;
+}
+
+.menu-left {
+    width: calc(50% - 40px);
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.menu-right {
+    width: calc(50% - 40px);
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+#menu h3 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 1.8rem;
+    letter-spacing: .3rem;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.main-border-01 {
+    border-top: 6px solid;
+    border-image: linear-gradient(to right, #FCE3C3 0%, #A1DCF6 30%, #FCE3C3 60%, #E6B9D6 100%);
+    border-image-slice: 1;
+}
+
+.main-border-02 {
+    border-top: 6px solid;
+    border-image: linear-gradient(to right, #A1DCF6 0%, #FCE3C3 30%, #E6B9D6 60%, #FCE3C3 100%);
+    border-image-slice: 1;
+}
+
+#menu table {
+    width: 100%;
+    border-top: 1px solid #333;
+    border-spacing: 5px 10px;
+}
+
+#menu table tr {
+    margin-top: 10px;
+}
+
+#menu table th {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: left;
+    width: 50%;
+}
+
+#menu table td {
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+@media screen and (max-width:768px) {
+    #menu {
+        padding: 40px 0;
+    }
+    #menu h2 {
+        margin-top: 10px;
+    }
+    .main-wrap {
+        width: 100%;
+    }
+    .menu-left, .menu-right {
+        width: 100%;
+    }
+}
+
+/*====================================
+  カタログ
+======================================*/
+
+#catlog {
+    background: #FDF9EE;
+    padding-top: 100px;
+    padding-bottom: 120px;
+    position: relative;
+}
+
+#catlog .con980 {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#catlog .number {
+    font-family: 'IM Fell DW Pica SC', serif;
+    display: block;
+    color: #363636;
+    font-size: 2.2rem;
+    letter-spacing: .3rem;
+    text-align: center;
+    position: absolute;
+    left: 310px;
+    top: 80px;
+    border-top: 1px solid #363636;
+    font-weight: bold;
+}
+
+#catlog h2::before {
+    display: none;
+}
+
+#catlog h2 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    width: 80%;
+    display: block;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.catlog-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.catlog_item {
+    width: 33.3%;
+    display: inline-block;
+    padding: 0 15px;
+    opacity: 1;
+}
+
+.catlog_item img {
+    width: 100%;
+}
+
+.catlog_item:first-child {
+    -webkit-transform: translate(0, 70px);
+    -ms-transform: translate(0, 70px);
+    transform: translate(0, 70px);
+}
+
+.catlog_item:last-child {
+    -webkit-transform: translate(0, -70px);
+    -ms-transform: translate(0, -70px);
+    transform: translate(0, -70px);
+}
+
+.catlog_item-info {
+    background-color: #FFF;
+    position: relative;
+    padding: 25px 20px;
+    width: calc(100% - 40px);
+    margin: -51px 0 0;
+}
+
+.catlog_item-label {
+    display: inline-block;
+    width: 88px;
+    padding: 4px 0;
+    text-align: center;
+    background-color: #333;
+    color: #FFF;
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0.1em;
+    position: absolute;
+    top: -15px;
+    left: 21px;
+}
+
+.catlog_item-stylist {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    color: #555;
+    display: block;
+    margin: 0 0 9px;
+}
+
+.catlog_item-title {
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+}
+
+.bottun-positon {
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#catlog .button {
+    font-family: 'IM Fell DW Pica SC', serif;
+    position: relative;
+    border: 1px solid #555;
+    background: #fff;
+    padding: 8px 30px;
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    outline: none;
+    transition: all .2s linear;
+}
+
+#catlog .button:hover {
+    background: #333;
+    color: #fff;
+}
+
+#catlog .button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -26px;
+    width: 40px;
+    height: 1px;
+    background: #333;
+    transition: all .2s linear;
+}
+
+#catlog .button::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: -21px;
+    width: 1px;
+    height: 12px;
+    background: #333;
+    transform: skewX(45deg);
+    transition: all .2s linear;
+}
+
+#catlog .button:hover::before {
+    right: -30px;
+}
+
+#catlog .button:hover::after {
+    right: -25px;
+}
+
+@media screen and (max-width:980px) {
+    #catlog .con980 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .catlog_item {
+        width: 100%;
+        margin: 20px 0;
+    }
+    #catlog .number {
+        display: none;
+    }
+    .catlog_item:first-child, .catlog_item:last-child {
+        -webkit-transform: translate(0, 0px);
+        -ms-transform: translate(0, 0px);
+        transform: translate(0, 0px);
+    }
+    .catlog_item-info {
+        width: 100%;
+        margin: -5px 0 0 0;
+    }
+
+    #catlog h2 {
+        padding : 0 20px;
+    }
+
+    #catlog h2::before {
+        display: inline;
+        content:'03';
+        font-size: 2.2rem;
+        letter-spacing: .3rem;
+        border-top: 1px solid #363636;
+        margin-right: 10px;
+    }
+
+    .bottun-positon {
+        position: relative;
+        width: 40%;
+        margin: 0 auto;
+    }
+}
+
+/*====================================
+  イメージ
+======================================*/
+
+.image {
+    background: #F2F0E9;
+    margin: 0 auto;
+    text-align: center;
+    padding: 70px 0;
+}
+
+.image img {
+    max-width: 80%;
+}
+
+@media screen and (max-width:768px) {
+    .image {
+        padding : 100px 0;
+    }
+
+    .image img {
+        max-width: 100%;
+    }
+}
+
+/*====================================
+  ニュース
+======================================*/
+
+#news {
+    background: #ededed;
+    padding-top: 100px;
+    padding-bottom: 60px;
+}
+
+#news .number {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 2.2rem;
+    letter-spacing: .3rem;
+    text-align: center;
+    border-top: 1px solid #363636;
+    font-weight: bold;
+}
+
+#news h2 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#news .con980 {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#news a {
+    display: block;
+    width: 100%;
+    transition: all .3s;
+    background-color: #FFF;
+    position: relative;
+    padding: 25px 20px;
+    margin-bottom: 40px;
+}
+
+#news a:hover {
+    opacity: 0.8;
+}
+
+.news_item-label {
+    display: inline-block;
+    width: 88px;
+    padding: 4px 0;
+    text-align: center;
+    background-color: #333;
+    color: #FFF;
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0.1em;
+    position: absolute;
+    top: -15px;
+    left: 21px;
+}
+
+a .news_item-day {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    color: #555;
+    display: block;
+    margin: 0 0 9px;
+}
+
+a .news_item-title {
+    color: #333;
+    font-size: 15px;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+}
+
+@media screen and (max-width:980px) {
+    #news .con980 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #news a {
+        margin-bottom: 20px;
+    }
+
+    #news {
+        padding: 50px 0;
+    }
+}
+
+/*====================================
+  採用情報
+======================================*/
+
+#recruit {
+    background: #FDF9EE;
+    padding-top: 160px;
+    padding-bottom: 130px;
+}
+
+.recruit-img {
+    flex-basis: calc(50% + 80px);
+    width: calc(50% + 80px);
+}
+
+.recruit-img img {
+    width: 100%;
+}
+
+.recruit-text {
+    flex-basis: calc(50% - 80px);
+    width: calc(50% - 80px);
+    position: relative;
+    height: auto;
+    text-align: left;
+    padding: 60px 40px 0 160px;
+}
+
+#recruit h2 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+#recruit h2::before {
+    content: '05';
+    font-size: 2.2rem;
+    letter-spacing: .3rem;
+    border-top: 1px solid #363636;
+    margin-right: 30px;
+    margin-top: -15px;
+}
+
+#recruit .button {
+    font-family: 'IM Fell DW Pica SC', serif;
+    position: relative;
+    border: 1px solid #555;
+    background: #fff;
+    padding: 8px 30px;
+    display: block;
+    width: 40%;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    margin: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    outline: none;
+    transition: all .2s linear;
+}
+
+#recruit .button:hover {
+    background: #333;
+    color: #fff;
+}
+
+#recruit .button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -26px;
+    width: 40px;
+    height: 1px;
+    background: #333;
+    transition: all .2s linear;
+}
+
+#recruit .button::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: -21px;
+    width: 1px;
+    height: 12px;
+    background: #333;
+    transform: skewX(45deg);
+    transition: all .2s linear;
+}
+
+#recruit .button:hover::before {
+    right: -30px;
+}
+
+#recruit .button:hover::after {
+    right: -25px;
+}
+
+#recruit p {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    letter-spacing: .3rem;
+}
+
+@media screen and (max-width:768px) {
+    .recruit-img {
+        flex-basis: 100%;
+        width: 100%;
+        order: 1;
+    }
+
+    .recruit-text {
+        flex-basis: 100%;
+        width: 100%;
+        order: 2;
+        padding: 60px 40px 0 40px;
+    }
+
+    #recruit p {
+        letter-spacing: .1em;
+    }
+
+    #recruit .button {
+        margin: 20px auto;
+    }
+}
+
+/*====================================
+  アクセス
+======================================*/
+
+#access {
+    background: #F2F0E9;
+    padding: 90px 0;
+}
+
+#access h2 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.access_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.map_box {
+    display: inline-block;
+    width: 70%
+}
+
+.access_box {
+    display: inline-block;
+    position: relative;
+    width: 30%;
+    padding: 40px 0 0 80px;
+}
+
+.access_box p {
+    font-size: 1.5em;
+}
+
+.access_box p span {
+    font-size: .9em;
+    color: #666;
+}
+
+.access_box dl {
+    position: relative;
+    display: flex;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+
+.access_box dl.border-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: #363636;
+}
+
+.access_box dd {
+    font-size: 1.7em;
+    letter-spacing: .2em;
+    font-family: 'IM Fell DW Pica SC', serif;
+    flex-basis: 30%;
+    width: 30%;
+}
+
+.access_box dt {
+    font-size: 1.5rem;
+    letter-spacing: .2em;
+    flex-basis: 70%;
+    width: 70%;
+}
+
+@media screen and (max-width:1200px)  {
+    .access_wrap {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .map_box {
+        display: block;
+        width: 100%;
+    }
+
+    .access_box {
+        display: block;
+        width: 100%;
+        padding: 40px 0 0 80px;
+    }
+}
+
+/*====================================
+  レビュー
+======================================*/
+
+#review {
+    width: 100%;
+    background-image: url('../img/review.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+}
+
+#review h2 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #363636;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.review_wrap {
+    position: relative;
+    margin: 0 auto;
+}
+
+.review_img {
+    position: absolute;
+    bottom: -84px;
+    left: 320px;
+}
+
+.review_img img {
+    width: 80%;
+}
+
+.review_box {
+    width: 40%;
+    background: #fff;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+#review .button {
+    font-family: 'IM Fell DW Pica SC', serif;
+    position: relative;
+    border: 1px solid #555;
+    background: #fff;
+    padding: 8px 30px;
+    display: block;
+    width: 30%;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    outline: none;
+    transition: all .2s linear;
+}
+
+#review .button:hover {
+    background: #333;
+    color: #fff;
+}
+
+#review .button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -26px;
+    width: 40px;
+    height: 1px;
+    background: #333;
+    transition: all .2s linear;
+}
+
+#review .button::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: -21px;
+    width: 1px;
+    height: 12px;
+    background: #333;
+    transform: skewX(45deg);
+    transition: all .2s linear;
+}
+
+#review .button:hover::before {
+    right: -30px;
+}
+
+#review .button:hover::after {
+    right: -25px;
+}
+
+#review p {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    letter-spacing: .2rem;
+}
+
+@media screen and (max-width:768px) {
+    #review {
+        background-image: url('../img/review_sp.jpg');
+    }
+
+    .review_box {
+        width: 90%;
+    }
+
+    .review_img {
+        left: 10px;
+    }
+
+    .review_img img {
+        width: 50%;
+    }
+}
+
+/*====================================
+  フッター
+======================================*/
+
+footer {
+    background: #ededed;
+    padding: 60px 0 20px 0;
+}
+
+footer .logo {
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #84945D;
+}
+
+footer .address {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer .tel {
+    text-align: center;
+    font-weight: bold;
+}
+
+footer a {
+    font-family: 'IM Fell DW Pica SC', serif;
+    display: block;
+    width: 50%;
+    font-size: 1.7em;
+    margin: 10px auto 5px auto;
+    letter-spacing: .2rem;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+footer a i {
+    font-size: .8em;
+    padding-right: 5px;
+}
+
+footer a:hover {
+    color: #888;
+}
+
+footer .copyright {
+    font-family: serif;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 20px;
+}
