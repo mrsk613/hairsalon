@@ -1,43 +1,54 @@
-$(window).on('load',function(){	//画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
+var searchBox = '.search-box'; // 絞り込む項目を選択するエリア
+var listItem = '.list_item';   // 絞り込み対象のアイテム
+var hideClass = 'is-hide';     // 絞り込み対象外の場合に付与されるclass名
 
-    //＝＝＝Muuriギャラリープラグイン設定
-    var grid = new Muuri('.grid', {
-    
-    //アイテムの表示速度※オプション。入れなくても動作します
-    showDuration: 600,
-    showEasing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-    hideDuration: 600,
-    hideEasing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-        
-    // アイテムの表示/非表示状態のスタイル※オプション。入れなくても動作します
-      visibleStyles: {
-        opacity: '1',
-        transform: 'scale(1)'
-      },
-      hiddenStyles: {
-        opacity: '0',
-        transform: 'scale(0.5)'
-      }    
-    });
-    
-    //＝＝＝並び替えボタン設定
-    $('.sort-btn li').on('click',function(){			//並び替えボタンをクリックしたら
-        $(".sort-btn .active").removeClass("active");	//並び替えボタンに付与されているactiveクラスを全て取り除き
-        var className = $(this).attr("class");			//クラス名を取得
-        className = className.split(' ');				//「sortXX active」のクラス名を分割して配列にする
-        $("."+className[0]).addClass("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
-        if(className[0] == "sort00"){						//クラス名がsort00（全て）のボタンの場合は、
-             grid.show('');								//全ての要素を出す
-        }else{											//それ以外の場合は
-            grid.filter("."+className[0]); 				//フィルターを実行
-        }
-    });
-    
-    //＝＝＝ Fancyboxの設定
-    $('[data-fancybox]').fancybox({
-     thumbs: {
-        autoStart: true, //グループのサムネイル一覧をデフォルトで出す。不必要であればfalseに
-      },	
-    });
-        
-    });
+
+$(".reset-button").click(function() {
+  $(listItem).removeClass(hideClass);
+});
+
+$(function() {
+  // 絞り込み項目を変更した時
+  $(document).on('change', searchBox + ' input', function() {
+    search_filter();
+  });
+});
+
+/**
+ * リストの絞り込みを行う
+ */
+function search_filter() {
+  // 非表示状態を解除
+  $(listItem).removeClass(hideClass);
+  for (var i = 0; i < $(searchBox).length; i++) {
+    var name = $(searchBox).eq(i).find('input').attr('name');
+    // 選択されている項目を取得
+    var searchData = get_selected_input_items(name);
+    // 選択されている項目がない、またはALLを選択している場合は飛ばす
+    if(searchData.length === 0 || searchData[0] === '') {
+      continue;
+    }
+    // リスト内の各アイテムをチェック
+    for (var j = 0; j < $(listItem).length; j++) {
+      // アイテムに設定している項目を取得
+      var itemData = $(listItem).eq(j).data(name);
+      // 絞り込み対象かどうかを調べる
+      if(searchData.indexOf(itemData) === -1) {
+        $(listItem).eq(j).addClass(hideClass);
+      }
+    }
+  }
+}
+
+/**
+ * inputで選択されている値の一覧を取得する
+ * @param  {String} name 対象にするinputのname属性の値
+ * @return {Array}       選択されているinputのvalue属性の値
+ */
+function get_selected_input_items(name) {
+  var searchData = [];
+  $('[name=' + name + ']:checked').each(function() {
+    searchData.push($(this).val());
+  });
+  return searchData;
+}
