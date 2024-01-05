@@ -1,15 +1,15 @@
 .logo a {
-	color: #84945D;
-	transition: all .2s ;
+	color: #84945d;
+	transition: all 0.2s;
 }
 
 .logo a:hover {
-	opacity: .8;
+	opacity: 0.8;
 }
 
 main {
 	padding-top: 68px;
-	background: #F2F0E9;
+	background: #f2f0e9;
 	padding-bottom: 50px;
 }
 
@@ -19,85 +19,99 @@ main {
 }
 
 @media screen and (max-width: 980px) {
-	.con980{
+	.con980 {
 		width: 100%;
 	}
-} 
+}
+
+#mainview {
+	background-image: url("../img/catlog.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	padding: 80px 0;
+}
+
+#mainview h2 {
+	text-align: center;
+	font-family: "IM Fell DW Pica SC", serif;
+	color: #363636;
+	font-size: 3em;
+	letter-spacing: 0.2em;
+	color: #333;
+	text-shadow: 0 0 3px #f2f0e9;
+	margin: 20px 0;
+}
 
 /*==================================================
-ギャラリーのためのcss
+絞り込み検索
 ===================================*/
 
-.sort-btn {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	padding: 50px 20px;
-}
-
-.sort-btn li {
+.search-wrap {
 	background: #fff;
-	color:#333;
-	list-style: none;
-	font-family: 'IM Fell DW Pica SC';
-	font-size: 1.6em;
-	letter-spacing: .1em;
-	border-radius: 10px;
-	cursor: pointer;
-	padding: 10px;
-	margin: 0 10px;
+	margin-top: 60px;
+	padding: 30px;
 }
 
-.sort-btn li.active {
-	background: #84945D;
-	color:#fff;
+.search-wrap h3 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
 }
 
-@media only screen and (max-width: 768px) {
-	.sort-btn {
-		justify-content: space-between;
-	}
-	.sort-btn li {
-		width: 48%;
-		margin: 0 0 10px 0;
-		text-align: center;
-	}
+.search-box {
+	margin-bottom: 20px;
 }
 
-.grid {
-	position: relative;
+.search-box p {
+	font-size: 1.6rem;
+	font-weight: bold;
 }
 
-.item {
-	display: block;
-	position: absolute;
-	width: 33%;
-	z-index: 1;
-	list-style: none;
+.search-box label {
+	font-size: 1.5rem;
+	line-height: 2;
+	margin-right: 15px;
 }
 
-.item-content {
-	position: relative;
+.search-wrap input.reset-button {
+	background: #363636;
+	font-size: 1.5rem;
+	color: #f2f0e9;
+	padding: 5px 20px;
+	border: none;
+	transition: all .3s;
+}
+
+.search-wrap input.reset-button:hover {
+	opacity: .6;
+}
+
+/*==================================================
+ギャラリー
+===================================*/
+ul.list {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 60px;
+}
+
+.list_item {
+	width: calc(33.3% - 2rem);
+	margin: 0 1rem 20px 1rem;
+}
+
+.list_item img {
 	width: 100%;
-	height: 100%;
 }
 
-.grid img {
-	width: 100%;
-	height: auto;
-	vertical-align: bottom;
+.list_item .catlog_item-info {
+	background-color: #fff;
+	position: relative;
+	padding: 25px 20px;
+	width: calc(100% - 40px);
+	margin: -51px 0 0;
 }
 
-@media only screen and (max-width: 768px) {
-	.item {
-		width: 49.5%;
-	}
-}
-
-.fancybox-thumbs {
-	background: transparent!important;
-}
-
-.fancybox-thumbs__list a:before {
-	border: 6px solid #84945D;
+.is-hide {
+	display: none;
 }
