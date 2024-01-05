@@ -86,6 +86,12 @@ main {
 	opacity: .6;
 }
 
+@media screen and (max-width:768px) {
+	.search-wrap {
+		margin: 60px 20px 0 20px;
+	}
+}
+
 /*==================================================
 ギャラリー
 ===================================*/
@@ -114,4 +120,11 @@ ul.list {
 
 .is-hide {
 	display: none;
+}
+
+@media screen and (max-width:768px) {
+	.list_item {
+		width: 90%;
+		margin: 0 auto 20px auto;
+	}
 }
